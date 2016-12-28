@@ -1,0 +1,51 @@
+.header-footer {
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #772266;
+}
+
+#site-header {
+    height: 45px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#site-header .title {
+    font-size: larger;
+    float: left;
+    height: 100%;
+    padding: 6px;
+}
+
+#site-header .btn {
+    float: right;
+    background-color: #44BB44;
+    color: white;
+}
+
+#site-content {
+    margin: 45px 0 45px 0;
+}
+
+#site-footer {
+    height: 45px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.navlink, .navlink:hover, .navlink:visited {
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+
+#nav-menu .dropdown-menu {
+    position: relative;
+    float: right;
+}

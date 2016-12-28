@@ -12,6 +12,7 @@ window.wl2 = (function($, undefined) {
 
     function init() {
         $(document).on('click', 'a', null, function (evt) {
+
             var page_id = PageId.parse($(this).attr('href'));
             if (page_id && page_id in pages) {
                 evt.stopPropagation();
@@ -26,7 +27,10 @@ window.wl2 = (function($, undefined) {
                 goto(evt.state.page_id);
             }
         });
-        return setup_html($('body'), '../fragments/base.html');
+        return setup_html($('body'), '../fragments/base.html').then(function() {
+            var nav_menu = $('#nav-menu');
+            nav_menu.find('.dropdown-toggle').dropdown();
+        });
     }
 
     function goto(page) {
