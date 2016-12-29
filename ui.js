@@ -30,6 +30,9 @@ window.wl2 = (function($, undefined) {
         return setup_html($('body'), '../fragments/base.html').then(function() {
             var nav_menu = $('#nav-menu');
             nav_menu.find('.dropdown-toggle').dropdown();
+            nav_menu.find('a').on('click', function () {
+                nav_menu.removeClass('open');
+            })
         });
     }
 

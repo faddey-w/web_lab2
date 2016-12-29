@@ -1,1 +1,39 @@
-form
+<div id="form-page" class="container">
+    <div class="row">
+        <div class="col-xs-4">
+            <form id="lab-form" role="form">
+                <div class="form-group">
+                    <label for="lab-msg">Message:</label>
+                    <input type="text" id="lab-msg" class="form-control" placeholder="Enter your message">
+                </div>
+                <div class="error"></div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        <div id="form-log" class="col-xs-8">
+
+        </div>
+        <script>
+            (function () {
+                var $form = $('#lab-form');
+                var $log = $('#form-log');
+                var $msg_input = $('#lab-msg');
+                var $error = $form.find('.error');
+                $form.submit(function(evt) {
+                    evt.preventDefault();
+                    var msg = $msg_input.val();
+                    if (msg.length > 0) {
+                        var entry = $('<div class="row"></div>');
+                        entry.text(msg);
+                        $log.append(entry);
+                        $msg_input.val('');
+                        $error.text('');
+                    } else {
+                        $error.text('Message should not be empty')
+                    }
+                });
+            })();
+        </script>
+    </div>
+</div>
